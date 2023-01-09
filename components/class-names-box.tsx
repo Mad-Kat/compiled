@@ -1,14 +1,14 @@
-import { ClassNames } from '@compiled/react'
-import { error } from '../style/colors'
+import { ClassNames } from "@compiled/react";
+import { error } from "../style/colors";
 
-export const BoxStyles = ({ children }) => (
+export const BoxStyles = ({ children }: any) => (
   <ClassNames>
     {({ css }) =>
       children({
         className: css`
           display: flex;
-          width: 100px;
-          height: 100px;
+          width: 300px;
+          height: 300px;
           border: 1px solid ${error};
           padding: 8px;
           flex-direction: column;
@@ -16,4 +16,4 @@ export const BoxStyles = ({ children }) => (
       })
     }
   </ClassNames>
-)
+);

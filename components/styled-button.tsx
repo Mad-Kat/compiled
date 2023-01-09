@@ -1,6 +1,6 @@
-import { styled } from '@compiled/react'
+import { styled } from "@compiled/react";
 
-export const Button = styled.button`
+export const Button = styled.button<{ color: string }>`
   color: ${(props) => props.color};
   background-color: transparent;
   padding: 6px 8px;
@@ -8,4 +8,4 @@ export const Button = styled.button`
   width: 100%;
   font-family: sans-serif;
   border: 1px solid ${(props) => props.color};
-`
+`;
