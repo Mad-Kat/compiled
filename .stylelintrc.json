@@ -1,0 +1,85 @@
+{
+  "processors": [
+    [
+      "stylelint-processor-styled-components",
+      {
+        "ignoreFiles": ["./**/*.css"]
+      }
+    ]
+  ],
+  "extends": [
+    "stylelint-config-prettier",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-styled-components"
+  ],
+  "plugins": ["stylelint-declaration-strict-value"],
+  "ignoreFiles": ["**/node_modules/**/*"],
+  "rules": {
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment", "inside-block"],
+        "ignoreAtRules": ["import"]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      { "ignoreAtRules": ["define-mixin", "mixin", "global-import"] }
+    ],
+    "at-rule-no-vendor-prefix": true,
+    "color-hex-case": "lower",
+    "color-named": "never",
+    "declaration-block-no-duplicate-properties": [
+      true,
+      { "ignoreProperties": ["composes"] }
+    ],
+    "declaration-empty-line-before": [
+      "never",
+      {
+        "ignore": [
+          "after-comment",
+          "after-declaration",
+          "inside-single-line-block"
+        ]
+      }
+    ],
+    "declaration-no-important": true,
+    "declaration-property-value-disallowed-list": {
+      "border": ["/thin/", "/medium/", "/thick/"]
+    },
+    "font-family-name-quotes": "always-where-recommended",
+    "function-url-quotes": "always",
+    "indentation": 2,
+    "max-nesting-depth": 4,
+    "media-feature-name-no-vendor-prefix": true,
+    "no-descending-specificity": null,
+    "no-invalid-double-slash-comments": true,
+    "no-missing-end-of-source-newline": true,
+    "property-no-unknown": [true, { "ignoreProperties": ["composes"] }],
+    "property-no-vendor-prefix": true,
+    "scss/operator-no-unspaced": null,
+    "selector-max-compound-selectors": 4,
+    "selector-no-vendor-prefix": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["global"] }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      { "ignoreTypes": ["/^-styled-mixin/", "/[$]dummyValue/"] }
+    ],
+    "scale-unlimited/declaration-strict-value": [
+      ["font-family", "font-size", "z-index"],
+      {
+        "ignoreKeywords": {
+          "": ["inherit", "currentColor", "transparent", "/^\\$?\\{?\\(/"]
+        },
+        "ignoreFunctions": true,
+        "ignoreVariables": true
+      }
+    ],
+    "string-quotes": "double",
+    "value-no-vendor-prefix": true
+  }
+}
